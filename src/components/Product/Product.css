@@ -1,0 +1,24 @@
+*{
+    box-sizing: border-box;
+}
+.shopItem{
+    margin-bottom: 30px;
+    width: 23%;
+    margin: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    padding: 15px 10px;
+}
+.shopItem:last-child{
+    margin-right: 0;
+}
+.shopThumb{
+}
+.shopThumb img{
+    width: 100%;
+}
+.shopTitle{
+    font-size: 14px;
+    font-family:cursive;
+    margin-bottom: 0;
+    padding-top: 10px;
+}

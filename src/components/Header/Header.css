@@ -1,0 +1,27 @@
+.header-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+}
+.logo img{
+    max-width: 200px;
+}
+.navbar{
+}
+.navbar ul{
+    margin: 0;
+    padding: 0;
+}
+.navbar ul li{
+    display: inline-block;
+    text-align: center;
+    margin-right: 30px;
+}
+.navbar ul li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #009E00;
+    font-weight: 500;
+}
