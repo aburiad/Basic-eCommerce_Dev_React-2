@@ -1,6 +1,7 @@
 import React from 'react';
 import './Header.css';
 import siteLogo from '../../../src/logo.svg.png'
+import { NavLink } from 'react-router-dom';
 const Header = () => {
     return (
         <div className='header-wrapper'>
@@ -9,11 +10,11 @@ const Header = () => {
             </div>
             <div className="navbar">
                 <ul>
-                    <li><a href='/'>Home</a></li>
-                    <li><a href='/Shop'>Shop</a></li>
-                    <li><a href='/Order'>Order</a></li>
-                    <li><a href='/About'>About</a></li>
-                    <li><a href='/Privicey'>Privicey</a></li>
+                    <li><NavLink to='/'>Home</NavLink></li>
+                    <li><NavLink to='/Shop'>Shop</NavLink></li>
+                    <li><NavLink to='/Cart'>Cart</NavLink></li>
+                    <li><NavLink to='/About'>About</NavLink></li>
+                    <li><NavLink to='/Privicey'>Privicey</NavLink></li>
                 </ul>
             </div>
         </div>

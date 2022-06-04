@@ -10,7 +10,8 @@ const Shop = () => {
     useEffect(()=>{
         fetch('./products.JSON')
         .then(res => res.json())
-        .then(data => setProduct(data))
+        .then(data => {setProduct(data);setuiproduct(data)})
+        
     },[])
     // let sum = 0;
     const cartToHandle =(products)=>{
@@ -22,17 +23,14 @@ const Shop = () => {
         //     console.log(sum)
         // }
     }
-
+        // search Handeling 
         const searchHandle =(event)=>{
             console.log(product)
             const searchkey = event.target.value;
-            for(let x of product){
-                const findvalue = x.name.includes(searchkey);
-                setuiproduct(findvalue);
-            }
-            // console.log(mathpro)
+            const searchres =  product.filter(product=> product.name.includes(searchkey))
+            console.log(searchres)
+            setuiproduct(searchres)
         }
-
     return (
         <div>
             <div className="search">
@@ -40,11 +38,12 @@ const Shop = () => {
             </div>
             <div className="shopLayout">
                 {
-                    product.map((singleProductObj)=>{
+                     uiproduct.map((singleProductObj)=>{
                         return (   
                             <Product passaFunc={cartToHandle} productInfo={singleProductObj}/>  
                         )
                     })
+                   
                 }
             </div>
         </div>
