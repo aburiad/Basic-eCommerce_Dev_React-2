@@ -21,3 +21,9 @@
 .search input:focus{
     outline: 1px solid #009E00;
 }
+.extra_layout.extraTrick {
+    position: absolute;
+    transform: rotate(90deg);
+    right: -16px;
+    padding: 0;
+}

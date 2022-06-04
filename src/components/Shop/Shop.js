@@ -1,4 +1,6 @@
- import React, { useEffect, useState } from 'react';
+
+import React, { useEffect, useState } from 'react';
+import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css'
 const Shop = () => {
@@ -13,16 +15,21 @@ const Shop = () => {
         .then(data => {setProduct(data);setuiproduct(data)})
         
     },[])
-    // let sum = 0;
+    let sum = 0;
     const cartToHandle =(products)=>{
         const newPrice = [...cart,products.price];
         setCart(newPrice);
-        // for(let x of cart){
-        //     let oldPrice = x;
-        //     sum += oldPrice;
-        //     console.log(sum)
-        // }
     }
+
+    const addition = (cart)=>{
+        console.log(cart)
+        let total = 0;
+        for(let x of cart){
+            total += x;
+        }
+        return total;
+    }
+    const addtotal = addition(cart);
         // search Handeling 
         const searchHandle =(event)=>{
             console.log(product)
@@ -31,12 +38,14 @@ const Shop = () => {
             console.log(searchres)
             setuiproduct(searchres)
         }
+        let ordered = cart.length;
     return (
         <div>
             <div className="search">
                 <input onChange={searchHandle} type="text" placeholder='search your product' />
             </div>
             <div className="shopLayout">
+                <Cart passCartinfo={addtotal} len={ordered}></Cart>
                 {
                      uiproduct.map((singleProductObj)=>{
                         return (   

@@ -1,9 +1,10 @@
 import React from 'react';
 import './Cart.css'
-const Cart = () => {
+import CartTrick from './CartTrick';
+const Cart = (props) => {
     return (
-        <div className='extra_layout'>
-            <h2>Cart</h2>
+        <div className='extra_layout extraTrick'>
+            <CartTrick passcart={props.passCartinfo} len={props.len}/>
         </div>
     );
 };
